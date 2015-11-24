@@ -1,0 +1,38 @@
+{
+  "name": "shopping-page-angular2",
+  "version": "1.0.0",
+  "description": "Shopping page done with angular2",
+  "main": "app.js",
+  "scripts": {
+    "old-start": "http-server -a 0.0.0.0 -p 9090",
+    "start": "node ./node/app.js",
+    "test": "node node_modules/karma/bin/karma start karma.conf.js"
+  },
+  "devDependencies": {
+    "typescript": "^1.6.2",
+    "grunt": "^0.4.5",
+    "grunt-contrib-watch": "^0.6.1",
+    "grunt-contrib-less": "^1.0.0",
+    "http-server": "0.8.0",
+    "less": "^2.5.1",
+    "istanbul": "^0.3.2",
+    "karma": "^0.12.24",
+    "karma-chrome-launcher": "^0.1.4",
+    "karma-cli": "~0.0.4",
+    "karma-coverage": "^0.2.6",
+    "karma-html2js-preprocessor": "^0.1.0",
+    "karma-jasmine": "^0.1.5",
+    "karma-phantomjs-launcher": "^0.1.4",
+    "karma-requirejs": "~0.2.1"
+  },
+  "dependencies": {
+    "angular2": "^2.0.0-alpha.46",
+    "body-parser": "^1.13.3",
+    "bootstrap": "^3.3.5",
+    "express": "^4.13.3",
+    "lodash": "^3.9.3",
+    "mongodb": "^2.0.40"
+  },
+  "author": "Mauricio Farinelli",
+  "license": "ISC"
+}
