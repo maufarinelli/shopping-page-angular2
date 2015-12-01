@@ -1,4 +1,4 @@
-import {bootstrap, Component, NgModel} from 'angular2/angular2';
+import {bootstrap, Component, FORM_DIRECTIVES} from 'angular2/angular2';
 
 class Hero {
     id: number;
@@ -16,7 +16,7 @@ class Hero {
             <div><input [(ng-model)]="hero.name" placeholder="name"></div>
         </div>
         `,
-    directives: [NgModel]
+    directives: [FORM_DIRECTIVES]
 })
 class AppComponent {
     public title: 'Tour of Heroes';
