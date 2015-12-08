@@ -6,6 +6,7 @@
   "scripts": {
     "old-start": "node ./node/app.js",
     "start": "node ./bin/www",
+    "tsc": "tsc -p public",
     "test": "node node_modules/karma/bin/karma start karma.conf.js"
   },
   "devDependencies": {
@@ -36,7 +37,8 @@
     "debug": "~2.2.0",
     "morgan": "~1.6.1",
     "serve-favicon": "~2.3.0",
-    "less-middleware": "1.0.x"
+    "less-middleware": "1.0.x",
+    "systemjs": "0.19.2"
   },
   "author": "Mauricio Farinelli",
   "license": "ISC"
