@@ -1,1 +1,11 @@
-.products-list{list-style-type:none;display:flex;flex-direction:row;flex-wrap:nowrap}.products-list li{flex:1;width:200px;margin-right:10px}.products-list a{color:#000}
+.products-list {
+  list-style-type: none;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+}
+.products-list li {
+  flex: 1;
+  width: 200px;
+  margin-right: 10px;
+}

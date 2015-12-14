@@ -1,4 +1,4 @@
 import {bootstrap, Component, FORM_DIRECTIVES, CORE_DIRECTIVES} from 'angular2/angular2';
-import {ProductComponent} from './product/product';
+import {ProductsListComponent} from './products-list/products-list.component';
 
-bootstrap(ProductComponent);
+bootstrap(ProductsListComponent);

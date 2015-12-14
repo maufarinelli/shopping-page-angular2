@@ -1,0 +1,8 @@
+<h1>Todos os produtos</h1>
+<ul class="products-list">
+    <li *ng-for="#product of products"
+        (click)="onSelect(product)"
+        [ng-class]="getSelectedClass(product)">
+        <product [product]="product">
+    </li>
+</ul>

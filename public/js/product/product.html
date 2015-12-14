@@ -1,12 +1,5 @@
-<h1>Todos os produtos</h1>
-<ul class="products-list">
-  <li *ng-for="#product of products"
-    (click)="onSelect(product)"
-    [ng-class]="getSelectedClass(product)">
-    <a class="product-wrapper" ng-href="#">
-        <h3>{{product.title}}</h3>
-        <img src="{{product.img}}">
-        <p>{{product.price}}</p>
-    </a>
-  </li>
-</ul>
+<a class="product-wrapper" ng-href="#">
+    <h3>{{product.title}}</h3>
+    <img src="{{product.img}}">
+    <p>{{product.price}}</p>
+</a>

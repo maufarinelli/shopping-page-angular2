@@ -10,46 +10,26 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var angular2_1 = require('angular2/angular2');
-// Products
+// Product
 var Product = (function () {
     function Product() {
     }
     return Product;
 })();
-var productsList = [
-    {
-        id: 100,
-        title: 'Carrinho de Bebe',
-        img: 'http://placehold.it/200x140',
-        price: '199,90',
-    },
-    {
-        id: 101,
-        title: 'Mamadeira para Bebe',
-        img: 'http://placehold.it/200x140',
-        price: '29,90',
-    },
-    {
-        id: 102,
-        title: 'Fralda Pampers - Pacote',
-        img: 'http://placehold.it/200x140',
-        price: '49,90',
-    }
-];
+exports.Product = Product;
 var ProductComponent = (function () {
     function ProductComponent() {
-        this.products = productsList;
     }
-    ProductComponent.prototype.onSelect = function () { };
-    ;
-    ProductComponent.prototype.getSelectedClass = function () { };
-    ;
+    __decorate([
+        angular2_1.Input(), 
+        __metadata('design:type', Product)
+    ], ProductComponent.prototype, "product");
     ProductComponent = __decorate([
         angular2_1.Component({
             selector: 'product',
             templateUrl: 'js/product/product.html',
             styleUrls: ['js/product/product.css'],
-            directives: [angular2_1.FORM_DIRECTIVES]
+            directives: [angular2_1.CORE_DIRECTIVES]
         }), 
         __metadata('design:paramtypes', [])
     ], ProductComponent);
