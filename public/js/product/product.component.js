@@ -36,4 +36,4 @@ var ProductComponent = (function () {
     return ProductComponent;
 })();
 exports.ProductComponent = ProductComponent;
-//# sourceMappingURL=product.js.map
+//# sourceMappingURL=product.component.js.map

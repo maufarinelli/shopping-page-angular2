@@ -10,7 +10,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var angular2_1 = require('angular2/angular2');
-var product_1 = require('../product/product');
+var product_component_1 = require('../product/product.component');
 var productsList = [
     {
         id: 100,
@@ -44,7 +44,7 @@ var ProductsListComponent = (function () {
             selector: 'products-list',
             templateUrl: 'js/products-list/products-list.html',
             styleUrls: ['js/products-list/products-list.css'],
-            directives: [angular2_1.CORE_DIRECTIVES, product_1.ProductComponent]
+            directives: [angular2_1.CORE_DIRECTIVES, product_component_1.ProductComponent]
         }), 
         __metadata('design:paramtypes', [])
     ], ProductsListComponent);

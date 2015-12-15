@@ -1,5 +1,5 @@
 import {bootstrap, Component, FORM_DIRECTIVES, CORE_DIRECTIVES} from 'angular2/angular2';
-import {Product, ProductComponent} from '../product/product';
+import {Product, ProductComponent} from '../product/product.component';
 
 var productsList: Product[] = [
     {
