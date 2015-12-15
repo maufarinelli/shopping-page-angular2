@@ -20,6 +20,9 @@ exports.Product = Product;
 var ProductComponent = (function () {
     function ProductComponent() {
     }
+    ProductComponent.prototype.addProduct = function (product) {
+        console.log(product);
+    };
     __decorate([
         angular2_1.Input(), 
         __metadata('design:type', Product)

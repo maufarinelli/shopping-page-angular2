@@ -16,4 +16,8 @@ export class Product {
 })
 export class ProductComponent {
     @Input() product: Product;
+
+    addProduct(product) {
+        console.log(product);
+    }
 }

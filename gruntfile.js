@@ -6,9 +6,9 @@ module.exports = function(grunt) {
                     paths: ["css"]
                 },
                 files: {
-                    //"public/styles/style.css" :"public/styles/style.less",
                     "public/js/product/product.css": "public/js/product/product.less",
-                    "public/js/products-list/products-list.css": "public/js/products-list/products-list.less"
+                    "public/js/products-list/products-list.css": "public/js/products-list/products-list.less",
+                    "public/js/wish-list/wish-lis.css": "public/js/wish-list/wish-lis.less"
                 }
             },
             production: {
@@ -17,20 +17,14 @@ module.exports = function(grunt) {
                     cleancss: true
                 },
                 files: {
-                    //"public/styles/style.css" :"public/styles/style.less",
                     "public/js/product/product.css": "public/js/product/product.less",
-                    "public/js/products-list/products-list.css": "public/js/products-list/products-list.less"
+                    "public/js/products-list/products-list.css": "public/js/products-list/products-list.less",
+                    "public/js/wish-list/wish-lis.css": "public/js/wish-list/wish-lis.less"
                 }
             }
-        },
-        watch: {
-            files: ['public/**/product.less'],
-            tasks: ['less']
         }
     });
 
     grunt.loadNpmTasks('grunt-contrib-less');
-    grunt.loadNpmTasks('grunt-contrib-watch');
-
-    grunt.registerTask('default', ['less', 'watch']);
+    grunt.registerTask('default', ['less']);
 }

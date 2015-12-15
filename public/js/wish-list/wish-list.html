@@ -1,0 +1,8 @@
+<section class="wish-list-wrapper">
+    <h3>Wish list</h3>
+    <ul class="wish-list">
+        <li *ng-for="#product of wishedProducts">
+            <product [product]="product">
+        </li>
+    </ul>
+</section>
