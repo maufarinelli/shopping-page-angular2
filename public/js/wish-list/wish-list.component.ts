@@ -1,4 +1,5 @@
 import {bootstrap, Component, CORE_DIRECTIVES} from 'angular2/angular2';
+import {WishList} from './wish-list.model';
 import {Product, ProductComponent} from '../product/product.component';
 
 @Component({
@@ -8,21 +9,8 @@ import {Product, ProductComponent} from '../product/product.component';
     directives: [CORE_DIRECTIVES, ProductComponent]
 })
 export class WishListComponent {
-    public wishedProducts: Product[];
-    constructor() {
-        this.wishedProducts = [
-            {
-                id: 100,
-                title: 'Carrinho de Bebe',
-                img: 'http://placehold.it/200x140',
-                price: '199,90',
-            },
-            {
-                id: 101,
-                title: 'Mamadeira para Bebe',
-                img: 'http://placehold.it/200x140',
-                price: '29,90',
-            }
-        ];
+    private service: WishList;
+    constructor(service: WishList) {
+        this.service = service
     }
 }

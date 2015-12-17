@@ -10,23 +10,11 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var angular2_1 = require('angular2/angular2');
+var wish_list_model_1 = require('./wish-list.model');
 var product_component_1 = require('../product/product.component');
 var WishListComponent = (function () {
-    function WishListComponent() {
-        this.wishedProducts = [
-            {
-                id: 100,
-                title: 'Carrinho de Bebe',
-                img: 'http://placehold.it/200x140',
-                price: '199,90',
-            },
-            {
-                id: 101,
-                title: 'Mamadeira para Bebe',
-                img: 'http://placehold.it/200x140',
-                price: '29,90',
-            }
-        ];
+    function WishListComponent(service) {
+        this.service = service;
     }
     WishListComponent = __decorate([
         angular2_1.Component({
@@ -35,7 +23,7 @@ var WishListComponent = (function () {
             styleUrls: ['js/wish-list/wish-list.css'],
             directives: [angular2_1.CORE_DIRECTIVES, product_component_1.ProductComponent]
         }), 
-        __metadata('design:paramtypes', [])
+        __metadata('design:paramtypes', [wish_list_model_1.WishList])
     ], WishListComponent);
     return WishListComponent;
 })();

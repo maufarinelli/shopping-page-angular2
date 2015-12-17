@@ -6,7 +6,7 @@
             <span class="sr-only">Toggle Dropdown</span>
         </button>
         <ul class="wish-list dropdown-menu dropdown-menu-right">
-            <li *ng-for="#product of wishedProducts">
+            <li *ng-for="#product of model">
                 <product [product]="product">
             </li>
         </ul>

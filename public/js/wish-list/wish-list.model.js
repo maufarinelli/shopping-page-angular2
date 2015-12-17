@@ -10,22 +10,25 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var angular2_1 = require('angular2/angular2');
-var products_list_component_1 = require('./products-list/products-list.component');
-var wish_list_component_1 = require('./wish-list/wish-list.component');
-var wish_list_model_1 = require('./wish-list/wish-list.model');
-var MainComponent = (function () {
-    function MainComponent() {
+//import _ = require('lodash');
+var WishList = (function () {
+    function WishList() {
+        this.wishedProducts = [];
     }
-    MainComponent = __decorate([
-        angular2_1.Component({
-            selector: 'main-component',
-            template: '<products-list>loading...</products-list><wish-list>loading...</wish-list>',
-            directives: [wish_list_component_1.WishListComponent, products_list_component_1.ProductsListComponent]
-        }), 
+    WishList.prototype.getWishedProducts = function () {
+        return this.wishedProducts;
+    };
+    WishList.prototype.setWishedProducts = function (products) {
+        this.wishedProducts = products;
+    };
+    WishList.prototype.addWishedProduct = function (product) {
+        this.wishedProducts.push(product);
+    };
+    WishList = __decorate([
+        angular2_1.Injectable(), 
         __metadata('design:paramtypes', [])
-    ], MainComponent);
-    return MainComponent;
+    ], WishList);
+    return WishList;
 })();
-exports.MainComponent = MainComponent;
-angular2_1.bootstrap(MainComponent, [wish_list_model_1.WishList]);
-//# sourceMappingURL=app.js.map
+exports.WishList = WishList;
+//# sourceMappingURL=wish-list.model.js.map
