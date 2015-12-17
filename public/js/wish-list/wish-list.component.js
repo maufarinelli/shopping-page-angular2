@@ -32,7 +32,7 @@ var WishListComponent = (function () {
         angular2_1.Component({
             selector: 'wish-list',
             templateUrl: 'js/wish-list/wish-list.html',
-            styleUrls: ['js/wish-list/wish-lis.css'],
+            styleUrls: ['js/wish-list/wish-list.css'],
             directives: [angular2_1.CORE_DIRECTIVES, product_component_1.ProductComponent]
         }), 
         __metadata('design:paramtypes', [])

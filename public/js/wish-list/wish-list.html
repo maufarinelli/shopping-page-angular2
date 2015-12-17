@@ -1,8 +1,14 @@
 <section class="wish-list-wrapper">
-    <h3>Wish list</h3>
-    <ul class="wish-list">
-        <li *ng-for="#product of wishedProducts">
-            <product [product]="product">
-        </li>
-    </ul>
+    <div class="btn-group">
+        <button type="button" class="btn btn-primary">Wish list</button>
+        <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <span class="caret"></span>
+            <span class="sr-only">Toggle Dropdown</span>
+        </button>
+        <ul class="wish-list dropdown-menu dropdown-menu-right">
+            <li *ng-for="#product of wishedProducts">
+                <product [product]="product">
+            </li>
+        </ul>
+    </div>
 </section>

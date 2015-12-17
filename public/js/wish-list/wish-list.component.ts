@@ -4,7 +4,7 @@ import {Product, ProductComponent} from '../product/product.component';
 @Component({
     selector: 'wish-list',
     templateUrl: 'js/wish-list/wish-list.html',
-    styleUrls: ['js/wish-list/wish-lis.css'],
+    styleUrls: ['js/wish-list/wish-list.css'],
     directives: [CORE_DIRECTIVES, ProductComponent]
 })
 export class WishListComponent {
