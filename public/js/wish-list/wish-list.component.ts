@@ -9,8 +9,9 @@ import {Product, ProductComponent} from '../product/product.component';
     directives: [CORE_DIRECTIVES, ProductComponent]
 })
 export class WishListComponent {
-    private service: WishList;
-    constructor(service: WishList) {
-        this.service = service
+    private wishList: WishList;
+    constructor(wishList: WishList) {
+        this.wishList = wishList;
     }
+    
 }

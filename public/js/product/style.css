@@ -1,0 +1,10 @@
+.products-list {
+  list-style-type: none;
+}
+.products-list li {
+  display: inline-block;
+  margin-right: 10px;
+}
+.products-list a {
+  color: #000;
+}

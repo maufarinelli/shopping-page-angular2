@@ -1,4 +1,5 @@
 import {bootstrap, Component, Input, FORM_DIRECTIVES, CORE_DIRECTIVES} from 'angular2/angular2';
+import {WishList} from '../wish-list/wish-list.model';
 
 // Product
 export class Product {
@@ -16,8 +17,13 @@ export class Product {
 })
 export class ProductComponent {
     @Input() product: Product;
+    private wishList: WishList;
+
+    constructor(wishList: WishList) {
+        this.wishList = wishList;
+    }
 
     addProduct(product) {
-        console.log(product);
+        this.wishList.addWishedProduct(product);
     }
 }

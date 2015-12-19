@@ -1,1 +1,1 @@
-.products-list{list-style-type:none;display:flex;flex-direction:row;flex-wrap:nowrap}.products-list li{flex:1;width:200px;margin-right:10px}.product-wrapper{display:block;color:#000}
+.wish-list .product-title{font-size:1.4rem}.wish-list .product-img{width:100px;height:70px}.wish-list .product-price{display:none}

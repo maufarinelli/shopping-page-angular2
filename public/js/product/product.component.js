@@ -10,6 +10,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var angular2_1 = require('angular2/angular2');
+var wish_list_model_1 = require('../wish-list/wish-list.model');
 // Product
 var Product = (function () {
     function Product() {
@@ -18,10 +19,11 @@ var Product = (function () {
 })();
 exports.Product = Product;
 var ProductComponent = (function () {
-    function ProductComponent() {
+    function ProductComponent(wishList) {
+        this.wishList = wishList;
     }
     ProductComponent.prototype.addProduct = function (product) {
-        console.log(product);
+        this.wishList.addWishedProduct(product);
     };
     __decorate([
         angular2_1.Input(), 
@@ -34,7 +36,7 @@ var ProductComponent = (function () {
             styleUrls: ['js/product/product.css'],
             directives: [angular2_1.CORE_DIRECTIVES]
         }), 
-        __metadata('design:paramtypes', [])
+        __metadata('design:paramtypes', [wish_list_model_1.WishList])
     ], ProductComponent);
     return ProductComponent;
 })();

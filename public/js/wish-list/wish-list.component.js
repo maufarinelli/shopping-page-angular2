@@ -13,8 +13,8 @@ var angular2_1 = require('angular2/angular2');
 var wish_list_model_1 = require('./wish-list.model');
 var product_component_1 = require('../product/product.component');
 var WishListComponent = (function () {
-    function WishListComponent(service) {
-        this.service = service;
+    function WishListComponent(wishList) {
+        this.wishList = wishList;
     }
     WishListComponent = __decorate([
         angular2_1.Component({

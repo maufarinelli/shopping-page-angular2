@@ -1,4 +1,11 @@
+@import '../../styles/_variables';
+
 .product-wrapper {
 	display: block;
-	color: #000;
+	color: @color-default;
+
+	&:hover {
+		color: @color-link-hover;
+		text-decoration: none;
+	}
 }
