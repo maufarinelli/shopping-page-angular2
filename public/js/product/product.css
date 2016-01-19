@@ -1,1 +1,8 @@
-.product-wrapper{display:block;color:#000}.product-wrapper:hover{color:#337ab7;text-decoration:none}
+.product-wrapper {
+  display: block;
+  color: #000;
+}
+.product-wrapper:hover {
+  color: #337ab7;
+  text-decoration: none;
+}

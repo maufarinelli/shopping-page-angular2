@@ -20,4 +20,15 @@ export class WishList {
     addWishedProduct(product: Product) {
         this.wishedProducts.push(product);
     }
+
+    removeWishedProduct(product: Product) {
+        var index = 0;
+        this.wishedProducts.forEach(function(element, i) {
+            if(element.id === product.id) {
+                index = i;
+            }
+        });
+
+        this.wishedProducts.splice(index, 1);
+    }
 }

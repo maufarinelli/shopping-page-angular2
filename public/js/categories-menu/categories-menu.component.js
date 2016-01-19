@@ -10,23 +10,30 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var angular2_1 = require('angular2/angular2');
-var products_list_component_1 = require('./products-list/products-list.component');
-var wish_list_component_1 = require('./wish-list/wish-list.component');
-var categories_menu_component_1 = require('./categories-menu/categories-menu.component');
-var wish_list_model_1 = require('./wish-list/wish-list.model');
-var MainComponent = (function () {
-    function MainComponent() {
+var categoryMenu = (function () {
+    function categoryMenu() {
     }
-    MainComponent = __decorate([
+    return categoryMenu;
+})();
+var categoriesMenuList = [
+    { categoryId: 1, categoryName: 'Carrinhos de bebe' },
+    { categoryId: 2, categoryName: 'Mamadeiras e accessorios' },
+    { categoryId: 3, categoryName: 'Fraldas' },
+];
+var CategoryMenuComponent = (function () {
+    function CategoryMenuComponent() {
+        this.menuList = categoriesMenuList;
+    }
+    CategoryMenuComponent = __decorate([
         angular2_1.Component({
-            selector: 'main-component',
-            templateUrl: 'js/app.html',
-            directives: [wish_list_component_1.WishListComponent, products_list_component_1.ProductsListComponent, categories_menu_component_1.CategoryMenuComponent]
+            selector: 'categories-menu',
+            templateUrl: 'js/categories-menu/categories-menu.html',
+            styleUrls: ['js/categories-menu/categories-menu.css'],
+            directives: [angular2_1.CORE_DIRECTIVES]
         }), 
         __metadata('design:paramtypes', [])
-    ], MainComponent);
-    return MainComponent;
+    ], CategoryMenuComponent);
+    return CategoryMenuComponent;
 })();
-exports.MainComponent = MainComponent;
-angular2_1.bootstrap(MainComponent, [wish_list_model_1.WishList]);
-//# sourceMappingURL=app.js.map
+exports.CategoryMenuComponent = CategoryMenuComponent;
+//# sourceMappingURL=categories-menu.component.js.map

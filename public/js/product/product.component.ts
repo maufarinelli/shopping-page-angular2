@@ -4,9 +4,12 @@ import {WishList} from '../wish-list/wish-list.model';
 // Product
 export class Product {
     id: number;
+    categoryName: string;
+    categoryId: number;
     title: string;
     img: string;
     price: string;
+    isAdded: boolean;
 }
 
 @Component({
@@ -25,5 +28,15 @@ export class ProductComponent {
 
     addProduct(product) {
         this.wishList.addWishedProduct(product);
+        this.toogleProductAdded(product);
+    }
+
+    removeProduct(product) {
+        this.wishList.removeWishedProduct(product);
+        this.toogleProductAdded(product);
+    }
+
+    private toogleProductAdded(product) {
+        product.isAdded = !product.isAdded;
     }
 }

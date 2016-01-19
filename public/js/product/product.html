@@ -1,6 +1,7 @@
-<a class="product-wrapper" ng-href="#">
+<a class="product-wrapper" ng-href="#" [ng-class]="{'is-added': product.isAdded}">
     <h4 class="product-title">{{product.title}}</h4>
     <img class="product-img" src="{{product.img}}">
     <p class="product-price">{{product.price}}</p>
-    <button class="product-button" (click)="addProduct(product)">Adicionar à lista</button>
+    <button *ng-if="!product.isAdded" class="product-button" (click)="addProduct(product)">Adicionar à lista</button>
+    <button *ng-if="product.isAdded" class="product-button" (click)="removeProduct(product)">Retirar da lista</button>
 </a>

@@ -24,6 +24,15 @@ var WishList = (function () {
     WishList.prototype.addWishedProduct = function (product) {
         this.wishedProducts.push(product);
     };
+    WishList.prototype.removeWishedProduct = function (product) {
+        var index = 0;
+        this.wishedProducts.forEach(function (element, i) {
+            if (element.id === product.id) {
+                index = i;
+            }
+        });
+        this.wishedProducts.splice(index, 1);
+    };
     WishList = __decorate([
         angular2_1.Injectable(), 
         __metadata('design:paramtypes', [])

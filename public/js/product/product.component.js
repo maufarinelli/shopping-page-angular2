@@ -24,6 +24,14 @@ var ProductComponent = (function () {
     }
     ProductComponent.prototype.addProduct = function (product) {
         this.wishList.addWishedProduct(product);
+        this.toogleProductAdded(product);
+    };
+    ProductComponent.prototype.removeProduct = function (product) {
+        this.wishList.removeWishedProduct(product);
+        this.toogleProductAdded(product);
+    };
+    ProductComponent.prototype.toogleProductAdded = function (product) {
+        product.isAdded = !product.isAdded;
     };
     __decorate([
         angular2_1.Input(), 
