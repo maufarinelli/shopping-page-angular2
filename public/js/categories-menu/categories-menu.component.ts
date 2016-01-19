@@ -1,7 +1,7 @@
 import {bootstrap, Component, FORM_DIRECTIVES, CORE_DIRECTIVES} from 'angular2/angular2';
 import {Product} from '../product/product.component';
 
-class categoryMenu {
+export class categoryMenu {
 	categoryId: number;
 	categoryName: string;
 }
@@ -12,7 +12,6 @@ var categoriesMenuList: categoryMenu[] = [
 	{ categoryId: 3, categoryName: 'Fraldas' },
 ];
 
-
 @Component({
     selector: 'categories-menu',
     templateUrl: 'js/categories-menu/categories-menu.html',
@@ -21,7 +20,14 @@ var categoriesMenuList: categoryMenu[] = [
 })
 export class CategoryMenuComponent {
     public menuList: categoryMenu[];
+    public categorySelected: number;
+
     constructor() {
         this.menuList = categoriesMenuList;
+    }
+
+    onSelect(category) {
+        this.categorySelected = category.categoryId;
+        console.log(this.categorySelected);
     }
 }

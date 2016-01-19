@@ -1,5 +1,5 @@
 import {Injectable} from 'angular2/angular2';
-import {Product, ProductComponent} from '../product/product.component';
+import {Product} from '../product/product.component';
 //import _ = require('lodash');
 
 @Injectable()

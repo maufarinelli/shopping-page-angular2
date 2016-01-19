@@ -14,8 +14,8 @@ var product_component_1 = require('../product/product.component');
 var productsList = [
     {
         id: 100,
-        categoryName: 'Carrinhos de bebe',
         categoryId: 1,
+        categoryName: 'Carrinhos de bebe',
         title: 'Carrinho de Bebe',
         img: 'http://placehold.it/200x140',
         price: '199,90',
@@ -23,8 +23,8 @@ var productsList = [
     },
     {
         id: 101,
-        categoryName: 'Mamadeiras e accessorios',
         categoryId: 2,
+        categoryName: 'Mamadeiras e accessorios',
         title: 'Mamadeira  para Bebe',
         img: 'http://placehold.it/200x140',
         price: '29,90',
@@ -32,8 +32,8 @@ var productsList = [
     },
     {
         id: 102,
-        categoryName: 'Fraldas',
         categoryId: 2,
+        categoryName: 'Fraldas',
         title: 'Fralda Pampers - Pacote',
         img: 'http://placehold.it/200x140',
         price: '49,90',

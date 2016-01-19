@@ -1,11 +1,12 @@
 import {bootstrap, Component, Input, FORM_DIRECTIVES, CORE_DIRECTIVES} from 'angular2/angular2';
 import {WishList} from '../wish-list/wish-list.model';
+import {categoryMenu} from '../categories-menu/categories-menu.component';
 
 // Product
 export class Product {
     id: number;
-    categoryName: string;
     categoryId: number;
+    categoryName: string;
     title: string;
     img: string;
     price: string;

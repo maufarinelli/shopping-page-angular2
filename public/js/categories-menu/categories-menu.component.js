@@ -15,6 +15,7 @@ var categoryMenu = (function () {
     }
     return categoryMenu;
 })();
+exports.categoryMenu = categoryMenu;
 var categoriesMenuList = [
     { categoryId: 1, categoryName: 'Carrinhos de bebe' },
     { categoryId: 2, categoryName: 'Mamadeiras e accessorios' },
@@ -24,6 +25,10 @@ var CategoryMenuComponent = (function () {
     function CategoryMenuComponent() {
         this.menuList = categoriesMenuList;
     }
+    CategoryMenuComponent.prototype.onSelect = function (category) {
+        this.categorySelected = category.categoryId;
+        console.log(this.categorySelected);
+    };
     CategoryMenuComponent = __decorate([
         angular2_1.Component({
             selector: 'categories-menu',
