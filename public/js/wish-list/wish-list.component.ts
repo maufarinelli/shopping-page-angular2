@@ -1,17 +1,17 @@
-import {bootstrap, Component, CORE_DIRECTIVES} from 'angular2/angular2';
+import {bootstrap, provide, Component, CORE_DIRECTIVES} from 'angular2/angular2';
 import {WishList} from './wish-list.model';
-import {Product, ProductComponent} from '../product/product.component';
+import {ProductComponent} from '../product/product.component';
 
 @Component({
     selector: 'wish-list',
     templateUrl: 'js/wish-list/wish-list.html',
     styleUrls: ['js/wish-list/wish-list.css'],
-    directives: [CORE_DIRECTIVES, ProductComponent]
+    directives: [CORE_DIRECTIVES, ProductComponent],
+    providers: [provide(WishList, {useClass: WishList})]
 })
 export class WishListComponent {
     private wishList: WishList;
     constructor(wishList: WishList) {
         this.wishList = wishList;
     }
-    
 }

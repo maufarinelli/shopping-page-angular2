@@ -10,52 +10,22 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var angular2_1 = require('angular2/angular2');
+var product_list_model_1 = require('./product-list.model');
 var product_component_1 = require('../product/product.component');
-var productsList = [
-    {
-        id: 100,
-        categoryId: 1,
-        categoryName: 'Carrinhos de bebe',
-        title: 'Carrinho de Bebe',
-        img: 'http://placehold.it/200x140',
-        price: '199,90',
-        isAdded: false
-    },
-    {
-        id: 101,
-        categoryId: 2,
-        categoryName: 'Mamadeiras e accessorios',
-        title: 'Mamadeira  para Bebe',
-        img: 'http://placehold.it/200x140',
-        price: '29,90',
-        isAdded: false
-    },
-    {
-        id: 102,
-        categoryId: 2,
-        categoryName: 'Fraldas',
-        title: 'Fralda Pampers - Pacote',
-        img: 'http://placehold.it/200x140',
-        price: '49,90',
-        isAdded: false
-    }
-];
 var ProductsListComponent = (function () {
-    function ProductsListComponent() {
+    function ProductsListComponent(productsList) {
         this.products = productsList;
     }
-    ProductsListComponent.prototype.onSelect = function () { };
-    ;
-    ProductsListComponent.prototype.getSelectedClass = function () { };
-    ;
+    ProductsListComponent.prototype.onSelect = function (product) { };
     ProductsListComponent = __decorate([
         angular2_1.Component({
             selector: 'products-list',
             templateUrl: 'js/products-list/products-list.html',
             styleUrls: ['js/products-list/products-list.css'],
-            directives: [angular2_1.CORE_DIRECTIVES, product_component_1.ProductComponent]
+            directives: [angular2_1.CORE_DIRECTIVES, product_component_1.ProductComponent],
+            providers: [angular2_1.provide(product_list_model_1.ProductList, { useClass: product_list_model_1.ProductList })]
         }), 
-        __metadata('design:paramtypes', [])
+        __metadata('design:paramtypes', [product_list_model_1.ProductList])
     ], ProductsListComponent);
     return ProductsListComponent;
 })();

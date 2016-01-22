@@ -1,6 +1,5 @@
 import {Injectable} from 'angular2/angular2';
 import {Product} from '../product/product.component';
-//import _ = require('lodash');
 
 @Injectable()
 export class WishList {

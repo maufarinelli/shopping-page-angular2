@@ -21,7 +21,8 @@ var WishListComponent = (function () {
             selector: 'wish-list',
             templateUrl: 'js/wish-list/wish-list.html',
             styleUrls: ['js/wish-list/wish-list.css'],
-            directives: [angular2_1.CORE_DIRECTIVES, product_component_1.ProductComponent]
+            directives: [angular2_1.CORE_DIRECTIVES, product_component_1.ProductComponent],
+            providers: [angular2_1.provide(wish_list_model_1.WishList, { useClass: wish_list_model_1.WishList })]
         }), 
         __metadata('design:paramtypes', [wish_list_model_1.WishList])
     ], WishListComponent);
