@@ -4,6 +4,7 @@ import {Product} from '../product/product.component';
 @Injectable()
 export class WishList {
     public wishedProducts: Product[];
+
     constructor() {
         this.wishedProducts = [];
     }

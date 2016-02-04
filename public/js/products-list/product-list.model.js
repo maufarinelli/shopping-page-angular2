@@ -47,6 +47,11 @@ var ProductList = (function () {
     ProductList.prototype.getProductList = function () {
         return this.productList;
     };
+    ProductList.prototype.filterProductList = function (categoryId) {
+        return this.productList.map(function (product) {
+            return product.categoryId = categoryId;
+        });
+    };
     ProductList = __decorate([
         angular2_1.Injectable(), 
         __metadata('design:paramtypes', [])

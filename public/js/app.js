@@ -13,6 +13,8 @@ var angular2_1 = require('angular2/angular2');
 var products_list_component_1 = require('./products-list/products-list.component');
 var wish_list_component_1 = require('./wish-list/wish-list.component');
 var categories_menu_component_1 = require('./categories-menu/categories-menu.component');
+var wish_list_model_1 = require('./wish-list/wish-list.model');
+var product_list_model_1 = require('./products-list/product-list.model');
 var MainComponent = (function () {
     function MainComponent() {
     }
@@ -27,5 +29,8 @@ var MainComponent = (function () {
     return MainComponent;
 })();
 exports.MainComponent = MainComponent;
-angular2_1.bootstrap(MainComponent);
+angular2_1.bootstrap(MainComponent, [
+    angular2_1.provide(wish_list_model_1.WishList, { useClass: wish_list_model_1.WishList }),
+    angular2_1.provide(product_list_model_1.ProductList, { useClass: product_list_model_1.ProductList })
+]);
 //# sourceMappingURL=app.js.map

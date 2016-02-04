@@ -6,11 +6,11 @@ import {ProductComponent} from '../product/product.component';
     selector: 'wish-list',
     templateUrl: 'js/wish-list/wish-list.html',
     styleUrls: ['js/wish-list/wish-list.css'],
-    directives: [CORE_DIRECTIVES, ProductComponent],
-    providers: [provide(WishList, {useClass: WishList})]
+    directives: [CORE_DIRECTIVES, ProductComponent]
 })
 export class WishListComponent {
     private wishList: WishList;
+
     constructor(wishList: WishList) {
         this.wishList = wishList;
     }

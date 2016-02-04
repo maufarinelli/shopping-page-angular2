@@ -1,4 +1,4 @@
-import {bootstrap, Component} from 'angular2/angular2';
+import {bootstrap, provide, Component} from 'angular2/angular2';
 import {ProductsListComponent} from './products-list/products-list.component';
 import {WishListComponent} from './wish-list/wish-list.component';
 import {CategoryMenuComponent} from './categories-menu/categories-menu.component';
@@ -12,4 +12,7 @@ import {ProductList} from './products-list/product-list.model';
 })
 export class MainComponent {}
 
-bootstrap(MainComponent);
+bootstrap(MainComponent, [
+    provide(WishList, {useClass: WishList}),
+    provide(ProductList, {useClass: ProductList})
+]);

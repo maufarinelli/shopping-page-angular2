@@ -10,22 +10,20 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var angular2_1 = require('angular2/angular2');
-var wish_list_model_1 = require('./wish-list.model');
-var product_component_1 = require('../product/product.component');
-var WishListComponent = (function () {
-    function WishListComponent(wishList) {
-        this.wishList = wishList;
+var CategoriesFilterPipe = (function () {
+    function CategoriesFilterPipe() {
     }
-    WishListComponent = __decorate([
-        angular2_1.Component({
-            selector: 'wish-list',
-            templateUrl: 'js/wish-list/wish-list.html',
-            styleUrls: ['js/wish-list/wish-list.css'],
-            directives: [angular2_1.CORE_DIRECTIVES, product_component_1.ProductComponent]
+    CategoriesFilterPipe.prototype.transform = function (value, args) {
+        console.log(value);
+        return value.filter(function (item) { return item; });
+    };
+    CategoriesFilterPipe = __decorate([
+        angular2_1.Pipe({
+            name: 'categoriesFilter'
         }), 
-        __metadata('design:paramtypes', [wish_list_model_1.WishList])
-    ], WishListComponent);
-    return WishListComponent;
+        __metadata('design:paramtypes', [])
+    ], CategoriesFilterPipe);
+    return CategoriesFilterPipe;
 })();
-exports.WishListComponent = WishListComponent;
-//# sourceMappingURL=wish-list.component.js.map
+exports.CategoriesFilterPipe = CategoriesFilterPipe;
+//# sourceMappingURL=categories-filter.pipe.js.map

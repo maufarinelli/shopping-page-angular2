@@ -1,5 +1,6 @@
 import {bootstrap, Component, FORM_DIRECTIVES, CORE_DIRECTIVES} from 'angular2/angular2';
 import {Product} from '../product/product.component';
+import {ProductList} from './products-list/product-list.model';
 
 export class categoryMenu {
 	categoryId: number;
@@ -16,18 +17,20 @@ var categoriesMenuList: categoryMenu[] = [
     selector: 'categories-menu',
     templateUrl: 'js/categories-menu/categories-menu.html',
     styleUrls: ['js/categories-menu/categories-menu.css'],
-    directives: [CORE_DIRECTIVES]
+    directives: [CORE_DIRECTIVES, ProductList]
 })
 export class CategoryMenuComponent {
-    public menuList: categoryMenu[];
-    public categorySelected: number;
+    private menuList: categoryMenu[];
+    private categorySelected: number;
+    private productList: ProductList;
 
-    constructor() {
+    constructor(productsList: ProductList) {
         this.menuList = categoriesMenuList;
+        this.productList = productsList.getProductList();
     }
 
     onSelect(category) {
         this.categorySelected = category.categoryId;
-        console.log(this.categorySelected);
+        this.productList.filterProductList(this.categorySelected);
     }
 }

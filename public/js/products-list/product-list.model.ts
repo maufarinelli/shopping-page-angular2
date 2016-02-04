@@ -44,7 +44,9 @@ export class ProductList {
         return this.productList;
     }
 
-    /*setProductList(list: Product[]) {
-        this.productList = list;
-    }*/
+    filterProductList(categoryId) {
+        return this.productList.map(function(product) {
+            return product.categoryId = categoryId;
+        });
+    }
 }
