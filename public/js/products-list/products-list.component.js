@@ -12,7 +12,6 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var angular2_1 = require('angular2/angular2');
 var product_list_model_1 = require('./product-list.model');
 var product_component_1 = require('../product/product.component');
-var categories_filter_pipe_1 = require('../categories-menu/categories-filter.pipe');
 var ProductsListComponent = (function () {
     function ProductsListComponent(productsList) {
         this.products = productsList.getProductList();
@@ -20,7 +19,6 @@ var ProductsListComponent = (function () {
     ProductsListComponent = __decorate([
         angular2_1.Component({
             selector: 'products-list',
-            pipes: [categories_filter_pipe_1.CategoriesFilterPipe],
             templateUrl: 'js/products-list/products-list.html',
             styleUrls: ['js/products-list/products-list.css'],
             directives: [angular2_1.CORE_DIRECTIVES, product_component_1.ProductComponent]

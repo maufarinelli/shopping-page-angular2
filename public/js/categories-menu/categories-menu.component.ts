@@ -1,6 +1,6 @@
-import {bootstrap, Component, FORM_DIRECTIVES, CORE_DIRECTIVES} from 'angular2/angular2';
+import {bootstrap, Component, Output, FORM_DIRECTIVES, CORE_DIRECTIVES} from 'angular2/angular2';
+import {EventEmitter} from 'angular2/core';
 import {Product} from '../product/product.component';
-import {ProductList} from './products-list/product-list.model';
 
 export class categoryMenu {
 	categoryId: number;
@@ -15,22 +15,23 @@ var categoriesMenuList: categoryMenu[] = [
 
 @Component({
     selector: 'categories-menu',
+    outputs: ['onCategorySelected'],
     templateUrl: 'js/categories-menu/categories-menu.html',
     styleUrls: ['js/categories-menu/categories-menu.css'],
-    directives: [CORE_DIRECTIVES, ProductList]
+    directives: [CORE_DIRECTIVES]
 })
 export class CategoryMenuComponent {
     private menuList: categoryMenu[];
     private categorySelected: number;
-    private productList: ProductList;
+    public onCategorySelected: EventEmitter<any> = new EventEmitter();
 
-    constructor(productsList: ProductList) {
+    constructor() {
         this.menuList = categoriesMenuList;
-        this.productList = productsList.getProductList();
     }
 
     onSelect(category) {
         this.categorySelected = category.categoryId;
-        this.productList.filterProductList(this.categorySelected);
+        console.log(this.onCategorySelected);
+        this.onCategorySelected.emit('categorySelected', category.categoryId);
     }
 }

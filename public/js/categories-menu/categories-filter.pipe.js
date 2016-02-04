@@ -14,8 +14,7 @@ var CategoriesFilterPipe = (function () {
     function CategoriesFilterPipe() {
     }
     CategoriesFilterPipe.prototype.transform = function (value, args) {
-        console.log(value);
-        return value.filter(function (item) { return item; });
+        return value.filter(function (item) { return item.categoryId === args[0]; });
     };
     CategoriesFilterPipe = __decorate([
         angular2_1.Pipe({

@@ -10,7 +10,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var angular2_1 = require('angular2/angular2');
-var product_list_model_1 = require('./products-list/product-list.model');
+var core_1 = require('angular2/core');
 var categoryMenu = (function () {
     function categoryMenu() {
     }
@@ -23,25 +23,26 @@ var categoriesMenuList = [
     { categoryId: 3, categoryName: 'Fraldas' },
 ];
 var CategoryMenuComponent = (function () {
-    function CategoryMenuComponent(productsList) {
+    function CategoryMenuComponent() {
+        this.onCategorySelected = new core_1.EventEmitter();
         this.menuList = categoriesMenuList;
-        this.productList = productsList.getProductList();
     }
     CategoryMenuComponent.prototype.onSelect = function (category) {
         this.categorySelected = category.categoryId;
-        this.productList.filterProductList(this.categorySelected);
+        console.log(this.onCategorySelected);
+        this.onCategorySelected.emit('categorySelected', category.categoryId);
     };
     CategoryMenuComponent = __decorate([
         angular2_1.Component({
             selector: 'categories-menu',
+            outputs: ['onCategorySelected'],
             templateUrl: 'js/categories-menu/categories-menu.html',
             styleUrls: ['js/categories-menu/categories-menu.css'],
-            directives: [angular2_1.CORE_DIRECTIVES, product_list_model_1.ProductList]
+            directives: [angular2_1.CORE_DIRECTIVES]
         }), 
-        __metadata('design:paramtypes', [(typeof (_a = typeof product_list_model_1.ProductList !== 'undefined' && product_list_model_1.ProductList) === 'function' && _a) || Object])
+        __metadata('design:paramtypes', [])
     ], CategoryMenuComponent);
     return CategoryMenuComponent;
-    var _a;
 })();
 exports.CategoryMenuComponent = CategoryMenuComponent;
 //# sourceMappingURL=categories-menu.component.js.map

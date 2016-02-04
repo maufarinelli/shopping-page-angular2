@@ -43,10 +43,4 @@ export class ProductList {
     getProductList() {
         return this.productList;
     }
-
-    filterProductList(categoryId) {
-        return this.productList.map(function(product) {
-            return product.categoryId = categoryId;
-        });
-    }
 }
