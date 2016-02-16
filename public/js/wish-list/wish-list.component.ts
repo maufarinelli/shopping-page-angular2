@@ -1,4 +1,5 @@
-import {bootstrap, provide, Component, CORE_DIRECTIVES} from 'angular2/angular2';
+import {provide, Component} from 'angular2/core';
+import {CORE_DIRECTIVES, FORM_DIRECTIVES} from 'angular2/common';
 import {WishList} from './wish-list.model';
 import {ProductComponent} from '../product/product.component';
 

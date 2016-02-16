@@ -1,4 +1,11 @@
-import {bootstrap, provide, Component} from 'angular2/angular2';
+/// <reference path="../../node_modules/angular2/typings/browser.d.ts"/>
+/// <reference path="../../node_modules/rxjs/Subject.d.ts"/>
+/// <reference path="../../node_modules/rxjs/Observer.d.ts"/>
+/// <reference path="../../node_modules/rxjs/observable/fromPromise.d.ts"/>
+/// <reference path="../../node_modules/rxjs/operator/toPromise.d.ts"/>
+
+import {bootstrap} from 'angular2/platform/browser'
+import {provide, Component} from 'angular2/core';
 import {ProductsListComponent} from './products-list/products-list.component';
 import {WishListComponent} from './wish-list/wish-list.component';
 import {CategoryMenuComponent} from './categories-menu/categories-menu.component';

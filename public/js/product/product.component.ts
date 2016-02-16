@@ -1,4 +1,5 @@
-import {bootstrap, Component, Input, FORM_DIRECTIVES, CORE_DIRECTIVES} from 'angular2/angular2';
+import {Component, Input} from 'angular2/core';
+import {CORE_DIRECTIVES, FORM_DIRECTIVES} from 'angular2/common';
 import {WishList} from '../wish-list/wish-list.model';
 import {categoryMenu} from '../categories-menu/categories-menu.component';
 

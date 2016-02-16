@@ -1,4 +1,5 @@
-import {bootstrap, Component, Output, FORM_DIRECTIVES, CORE_DIRECTIVES} from 'angular2/angular2';
+import {Component, Output} from 'angular2/core';
+import {CORE_DIRECTIVES, FORM_DIRECTIVES} from 'angular2/common';
 import {EventEmitter} from 'angular2/core';
 import {Product} from '../product/product.component';
 
@@ -32,6 +33,6 @@ export class CategoryMenuComponent {
     onSelect(category) {
         this.categorySelected = category.categoryId;
         console.log(this.onCategorySelected);
-        this.onCategorySelected.emit('categorySelected', category.categoryId);
+        //this.onCategorySelected.emit('categorySelected', category.categoryId);
     }
 }

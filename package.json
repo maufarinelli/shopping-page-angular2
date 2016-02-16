@@ -10,7 +10,7 @@
     "test": "node node_modules/karma/bin/karma start karma.conf.js"
   },
   "devDependencies": {
-    "typescript": "^1.6.2",
+    "typescript": "^1.7.5",
     "grunt": "^0.4.5",
     "grunt-contrib-watch": "^0.6.1",
     "grunt-contrib-less": "^1.0.0",
@@ -23,10 +23,11 @@
     "karma-coverage": "^0.2.6",
     "karma-html2js-preprocessor": "^0.1.0",
     "karma-jasmine": "^0.1.5",
-    "karma-phantomjs-launcher": "^0.1.4"
+    "karma-phantomjs-launcher": "^0.1.4",
+    "typings":"^0.6.8"
   },
   "dependencies": {
-    "angular2": "^2.0.0-beta.1",
+    "angular2": "^2.0.0-beta.3",
     "body-parser": "^1.13.3",
     "bootstrap": "^3.3.5",
     "jquery": "^2.1.4",
@@ -39,7 +40,12 @@
     "morgan": "~1.6.1",
     "serve-favicon": "~2.3.0",
     "less-middleware": "1.0.x",
-    "systemjs": "0.19.2"
+    "systemjs": "0.19.2",
+    "es6-promise": "^3.0.2",
+    "es6-shim": "^0.33.3",
+    "reflect-metadata": "0.1.2",
+    "rxjs": "5.0.0-beta.0",
+    "zone.js": "0.5.11"
   },
   "author": "Mauricio Farinelli",
   "license": "ISC"

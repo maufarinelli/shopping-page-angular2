@@ -1,4 +1,5 @@
-import {bootstrap, provide, Component, FORM_DIRECTIVES, CORE_DIRECTIVES} from 'angular2/angular2';
+import {provide, Component} from 'angular2/core';
+import {CORE_DIRECTIVES, FORM_DIRECTIVES} from 'angular2/common';
 import {Product} from '../product/product.component';
 import {ProductList} from './product-list.model';
 import {ProductComponent} from '../product/product.component';
@@ -15,6 +16,4 @@ export class ProductsListComponent {
     constructor(productsList: ProductList) {
         this.products = productsList.getProductList();
     }
-
-
 }
