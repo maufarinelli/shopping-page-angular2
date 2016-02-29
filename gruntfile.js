@@ -6,11 +6,11 @@ module.exports = function(grunt) {
                     paths: ["css"]
                 },
                 files: {
-                    "public/styles/style.css": "public/styles/style.less",
-                    "public/js/product/product.css": "public/js/product/product.less",
-                    "public/js/products-list/products-list.css": "public/js/products-list/products-list.less",
-                    "public/js/wish-list/wish-list.css": "public/js/wish-list/wish-list.less",
-                    "public/js/categories-menu/categories-menu.css": "public/js/categories-menu/categories-menu.less"
+                    "styles/style.css": "styles/style.less",
+                    "js/product/product.css": "js/product/product.less",
+                    "js/products-list/products-list.css": "js/products-list/products-list.less",
+                    "js/wish-list/wish-list.css": "js/wish-list/wish-list.less",
+                    "js/categories-menu/categories-menu.css": "js/categories-menu/categories-menu.less"
                 }
             },
             production: {
@@ -19,11 +19,11 @@ module.exports = function(grunt) {
                     cleancss: true
                 },
                 files: {
-                    "public/styles/style.css": "public/styles/style.less",
-                    "public/js/product/product.css": "public/js/product/product.less",
-                    "public/js/products-list/products-list.css": "public/js/products-list/products-list.less",
-                    "public/js/wish-list/wish-list.css": "public/js/wish-list/wish-list.less",
-                    "public/js/categories-menu/categories-menu.css": "public/js/categories-menu/categories-menu.less"
+                    "styles/style.css": "styles/style.less",
+                    "js/product/product.css": "js/product/product.less",
+                    "js/products-list/products-list.css": "js/products-list/products-list.less",
+                    "js/wish-list/wish-list.css": "js/wish-list/wish-list.less",
+                    "js/categories-menu/categories-menu.css": "js/categories-menu/categories-menu.less"
                 }
             }
         }

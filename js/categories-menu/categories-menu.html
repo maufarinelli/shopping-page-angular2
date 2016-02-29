@@ -1,0 +1,6 @@
+<h3 class="categories-menu-title">Categories</h3>
+<ul class="categories-menu-list">
+	<li *ngFor="#category of menuList">
+		<a href="#" class="categories-menu-list-item" (click)="onSelect(category)">{{category.categoryName}}</a>
+	</li>
+</ul>

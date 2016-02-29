@@ -1,0 +1,14 @@
+<section class="wish-list-wrapper">
+    <div class="btn-group">
+        <button type="button" class="btn btn-primary">Wish list</button>
+        <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <span class="caret"></span>
+            <span class="sr-only">Toggle Dropdown</span>
+        </button>
+        <ul class="wish-list dropdown-menu dropdown-menu-right">
+            <li *ngFor="#product of wishList.wishedProducts">
+                <product [product]="product"></product>
+            </li>
+        </ul>
+    </div>
+</section>

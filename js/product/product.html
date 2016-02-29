@@ -1,0 +1,7 @@
+<a class="product-wrapper" ngHref="#" [ngClass]="{'is-added': product.isAdded}">
+    <h4 class="product-title">{{product.title}}</h4>
+    <img class="product-img" src="{{product.img}}">
+    <p class="product-price">{{product.price}}</p>
+    <button *ngIf="!product.isAdded" class="product-button" (click)="addProduct(product)">Add</button>
+    <button *ngIf="product.isAdded" class="product-button" (click)="removeProduct(product)">Remove</button>
+</a>

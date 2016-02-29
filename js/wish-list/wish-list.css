@@ -1,0 +1,15 @@
+.wish-list-wrapper {
+  position: fixed;
+  top: 0;
+  right: 0;
+  padding: 10px;
+}
+.wish-list-wrapper .btn-group > .btn + .dropdown-toggle {
+  padding-top: 14px;
+  padding-bottom: 14px;
+}
+.wish-list {
+  list-style-type: none;
+  padding: 10px;
+  border: 1px solid #ccc;
+}

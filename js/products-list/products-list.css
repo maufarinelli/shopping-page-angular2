@@ -1,0 +1,13 @@
+.products-list-title {
+  margin-left: 35px;
+}
+.products-list {
+  list-style-type: none;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+}
+.products-list li {
+  flex: 0 1 200px;
+  margin-right: 10px;
+}
