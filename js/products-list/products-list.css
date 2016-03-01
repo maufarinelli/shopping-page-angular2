@@ -5,7 +5,7 @@
   list-style-type: none;
   display: flex;
   flex-direction: row;
-  flex-wrap: nowrap;
+  flex-wrap: wrap;
 }
 .products-list li {
   flex: 0 1 200px;
