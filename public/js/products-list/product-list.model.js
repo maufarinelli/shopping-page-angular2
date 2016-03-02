@@ -1,4 +1,4 @@
-System.register(['angular2/core'], function(exports_1, context_1) {
+System.register(['angular2/core', 'angular2/http', 'rxjs/Observable'], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -10,54 +10,38 @@ System.register(['angular2/core'], function(exports_1, context_1) {
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1;
-    var productsList, ProductList;
+    var core_1, http_1, Observable_1;
+    var ProductList;
     return {
         setters:[
             function (core_1_1) {
                 core_1 = core_1_1;
+            },
+            function (http_1_1) {
+                http_1 = http_1_1;
+            },
+            function (Observable_1_1) {
+                Observable_1 = Observable_1_1;
             }],
         execute: function() {
-            // Mocked data
-            productsList = [
-                {
-                    id: 100,
-                    categoryId: 1,
-                    categoryName: 'Baby Strollers',
-                    title: 'Baby Stroller',
-                    img: 'http://placehold.it/200x140',
-                    price: '199,90',
-                    isAdded: false
-                },
-                {
-                    id: 101,
-                    categoryId: 2,
-                    categoryName: 'Polypropylene Bottle',
-                    title: 'Bottles & accessories',
-                    img: 'http://placehold.it/200x140',
-                    price: '29,90',
-                    isAdded: false
-                },
-                {
-                    id: 102,
-                    categoryId: 3,
-                    categoryName: 'Diapers',
-                    title: 'Pampers Diapers Pak',
-                    img: 'http://placehold.it/200x140',
-                    price: '49,90',
-                    isAdded: false
-                }
-            ];
             ProductList = (function () {
-                function ProductList() {
-                    this.productList = productsList;
+                function ProductList(http) {
+                    this.http = http;
+                    this.productListUrl = '/product-list';
+                    this.http = http;
                 }
+                ProductList.prototype.getHttpProductList = function () {
+                    var _this = this;
+                    return this.http.get(this.productListUrl)
+                        .map(function (res) { return _this.productList = res.json(); })
+                        .catch(function (error) { return Observable_1.Observable.throw(error.json().error || 'Server error'); });
+                };
                 ProductList.prototype.getProductList = function () {
                     return this.productList;
                 };
                 ProductList = __decorate([
                     core_1.Injectable(), 
-                    __metadata('design:paramtypes', [])
+                    __metadata('design:paramtypes', [http_1.Http])
                 ], ProductList);
                 return ProductList;
             }());

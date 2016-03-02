@@ -1,4 +1,4 @@
-System.register(['angular2/core', 'angular2/common', './categories-menu.event-emitter.service'], function(exports_1, context_1) {
+System.register(['angular2/core', 'angular2/http', 'angular2/common', 'rxjs/add/operator/map', 'rxjs/add/operator/catch', './categories-menu.event-emitter.service'], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -10,16 +10,22 @@ System.register(['angular2/core', 'angular2/common', './categories-menu.event-em
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1, common_1, categories_menu_event_emitter_service_1;
+    var core_1, http_1, common_1, categories_menu_event_emitter_service_1, core_2;
     var categoryMenu, categoriesMenuList, CategoryMenuComponent;
     return {
         setters:[
             function (core_1_1) {
                 core_1 = core_1_1;
+                core_2 = core_1_1;
+            },
+            function (http_1_1) {
+                http_1 = http_1_1;
             },
             function (common_1_1) {
                 common_1 = common_1_1;
             },
+            function (_1) {},
+            function (_2) {},
             function (categories_menu_event_emitter_service_1_1) {
                 categories_menu_event_emitter_service_1 = categories_menu_event_emitter_service_1_1;
             }],
@@ -37,8 +43,19 @@ System.register(['angular2/core', 'angular2/common', './categories-menu.event-em
                 { categoryId: 3, categoryName: 'Diapers' },
             ];
             CategoryMenuComponent = (function () {
-                function CategoryMenuComponent(categorySelectedService) {
-                    this.menuList = categoriesMenuList;
+                function CategoryMenuComponent(http, categorySelectedService) {
+                    var _this = this;
+                    this.categoriesUrl = '/categories';
+                    this.http = http;
+                    this.zone = new core_2.NgZone({ enableLongStackTrace: false });
+                    this.http.get(this.categoriesUrl)
+                        .map(function (res) { return res.json(); })
+                        .subscribe(function (categories) {
+                        _this.zone.run(function () {
+                            _this.menuList = categories;
+                        });
+                    });
+                    //this.menuList = categoriesMenuList;
                     this.categorySelected = categorySelectedService;
                 }
                 CategoryMenuComponent.prototype.onSelect = function (category) {
@@ -51,7 +68,7 @@ System.register(['angular2/core', 'angular2/common', './categories-menu.event-em
                         styleUrls: ['js/categories-menu/categories-menu.css'],
                         directives: [common_1.CORE_DIRECTIVES]
                     }), 
-                    __metadata('design:paramtypes', [categories_menu_event_emitter_service_1.CategorySelectedService])
+                    __metadata('design:paramtypes', [http_1.Http, categories_menu_event_emitter_service_1.CategorySelectedService])
                 ], CategoryMenuComponent);
                 return CategoryMenuComponent;
             }());

@@ -1,8 +1,8 @@
-/// <reference path="../node_modules/angular2/typings/browser.d.ts"/>
-/// <reference path="../node_modules/rxjs/Subject.d.ts"/>
-/// <reference path="../node_modules/rxjs/Observer.d.ts"/>
-/// <reference path="../node_modules/rxjs/operator/toPromise.d.ts"/>
-System.register(['angular2/platform/browser', 'angular2/core', './products-list/products-list.component', './wish-list/wish-list.component', './categories-menu/categories-menu.component', './wish-list/wish-list.model', './products-list/product-list.model', './categories-menu/categories-menu.event-emitter.service'], function(exports_1, context_1) {
+/// <reference path="../../node_modules/angular2/typings/browser.d.ts"/>
+/// <reference path="../../node_modules/rxjs/Subject.d.ts"/>
+/// <reference path="../../node_modules/rxjs/Observer.d.ts"/>
+/// <reference path="../../node_modules/rxjs/operator/toPromise.d.ts"/>
+System.register(['angular2/platform/browser', 'angular2/core', 'angular2/http', './products-list/products-list.component', './wish-list/wish-list.component', './categories-menu/categories-menu.component', './wish-list/wish-list.model', './products-list/product-list.model', './categories-menu/categories-menu.event-emitter.service'], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -14,7 +14,7 @@ System.register(['angular2/platform/browser', 'angular2/core', './products-list/
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var browser_1, core_1, products_list_component_1, wish_list_component_1, categories_menu_component_1, wish_list_model_1, product_list_model_1, categories_menu_event_emitter_service_1;
+    var browser_1, core_1, http_1, products_list_component_1, wish_list_component_1, categories_menu_component_1, wish_list_model_1, product_list_model_1, categories_menu_event_emitter_service_1;
     var MainComponent;
     return {
         setters:[
@@ -23,6 +23,9 @@ System.register(['angular2/platform/browser', 'angular2/core', './products-list/
             },
             function (core_1_1) {
                 core_1 = core_1_1;
+            },
+            function (http_1_1) {
+                http_1 = http_1_1;
             },
             function (products_list_component_1_1) {
                 products_list_component_1 = products_list_component_1_1;
@@ -57,12 +60,13 @@ System.register(['angular2/platform/browser', 'angular2/core', './products-list/
                 return MainComponent;
             }());
             exports_1("MainComponent", MainComponent);
-            browser_1.bootstrap(MainComponent, [
-                core_1.provide(wish_list_model_1.WishList, { useClass: wish_list_model_1.WishList }),
-                core_1.provide(product_list_model_1.ProductList, { useClass: product_list_model_1.ProductList }),
-                core_1.provide(categories_menu_event_emitter_service_1.CategorySelectedService, { useClass: categories_menu_event_emitter_service_1.CategorySelectedService })
-            ]);
+            browser_1.bootstrap(MainComponent, [wish_list_model_1.WishList, product_list_model_1.ProductList, categories_menu_event_emitter_service_1.CategorySelectedService, http_1.HTTP_PROVIDERS]);
         }
     }
 });
+//provide(WishList, {useClass: WishList}),
+//provide(ProductList, {useClass: ProductList}),
+//provide(CategorySelectedService, {useClass: CategorySelectedService}),
+//provide(HTTP_PROVIDERS, {useClass: HTTP_PROVIDERS})
+//]); 
 //# sourceMappingURL=app.js.map

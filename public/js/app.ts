@@ -1,10 +1,11 @@
-/// <reference path="../node_modules/angular2/typings/browser.d.ts"/>
-/// <reference path="../node_modules/rxjs/Subject.d.ts"/>
-/// <reference path="../node_modules/rxjs/Observer.d.ts"/>
-/// <reference path="../node_modules/rxjs/operator/toPromise.d.ts"/>
+/// <reference path="../../node_modules/angular2/typings/browser.d.ts"/>
+/// <reference path="../../node_modules/rxjs/Subject.d.ts"/>
+/// <reference path="../../node_modules/rxjs/Observer.d.ts"/>
+/// <reference path="../../node_modules/rxjs/operator/toPromise.d.ts"/>
 
 import {bootstrap} from 'angular2/platform/browser'
 import {provide, Component} from 'angular2/core';
+import {HTTP_PROVIDERS} from 'angular2/http';
 import {ProductsListComponent} from './products-list/products-list.component';
 import {WishListComponent} from './wish-list/wish-list.component';
 import {CategoryMenuComponent} from './categories-menu/categories-menu.component';
@@ -19,8 +20,9 @@ import {CategorySelectedService} from './categories-menu/categories-menu.event-e
 })
 export class MainComponent {}
 
-bootstrap(MainComponent, [
-    provide(WishList, {useClass: WishList}),
-    provide(ProductList, {useClass: ProductList}),
-    provide(CategorySelectedService, {useClass: CategorySelectedService})
-]);
+bootstrap(MainComponent, [WishList, ProductList, CategorySelectedService, HTTP_PROVIDERS]);
+    //provide(WishList, {useClass: WishList}),
+    //provide(ProductList, {useClass: ProductList}),
+    //provide(CategorySelectedService, {useClass: CategorySelectedService}),
+    //provide(HTTP_PROVIDERS, {useClass: HTTP_PROVIDERS})
+//]);

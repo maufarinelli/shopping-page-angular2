@@ -1,0 +1,6 @@
+[
+  { "categoryId": 0, "categoryName": "All Products" },
+  { "categoryId": 1, "categoryName": "Baby Strollers" },
+  { "categoryId": 2, "categoryName": "Bottles & accessories" },
+  { "categoryId": 3, "categoryName": "Diapers" }
+]
