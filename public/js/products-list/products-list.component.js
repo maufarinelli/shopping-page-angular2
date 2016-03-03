@@ -10,13 +10,12 @@ System.register(['angular2/core', 'angular2/http', 'rxjs/add/operator/map', 'rxj
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1, http_1, common_1, product_list_model_1, product_component_1, categories_menu_event_emitter_service_1, _, core_2;
+    var core_1, http_1, common_1, product_list_model_1, product_component_1, categories_menu_event_emitter_service_1, _;
     var ProductsListComponent;
     return {
         setters:[
             function (core_1_1) {
                 core_1 = core_1_1;
-                core_2 = core_1_1;
             },
             function (http_1_1) {
                 http_1 = http_1_1;
@@ -43,18 +42,15 @@ System.register(['angular2/core', 'angular2/http', 'rxjs/add/operator/map', 'rxj
             ProductsListComponent = (function () {
                 function ProductsListComponent(productsList, categorySelectedService) {
                     var _this = this;
-                    this.init(productsList);
-                    this.zone = new core_2.NgZone({ enableLongStackTrace: false });
+                    this.productsList = productsList;
                     this.categorySelected = categorySelectedService;
                     this.categorySelected.categorySelected.subscribe(function (data) { return _this.filterProductsByCategory(data); });
                 }
-                ProductsListComponent.prototype.init = function (productsList) {
+                ProductsListComponent.prototype.ngOnInit = function () {
                     var _this = this;
-                    productsList.getHttpProductList().subscribe(function (products) {
+                    this.productsList.getHttpProductList().subscribe(function (products) {
                         _this.allProducts = products;
-                        _this.zone.run(function () {
-                            _this.products = _this.allProducts;
-                        });
+                        _this.products = _this.allProducts;
                     }, function (error) { return _this.errorMessage = error; });
                 };
                 ProductsListComponent.prototype.filterProductsByCategory = function (id) {

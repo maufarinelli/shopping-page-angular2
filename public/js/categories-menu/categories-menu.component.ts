@@ -7,19 +7,12 @@ import 'rxjs/add/operator/catch';
 import {Product} from '../product/product.component';
 import {CategorySelectedService} from './categories-menu.event-emitter.service';
 import {Observable} from 'rxjs/Observable';
-import {NgZone} from 'angular2/core';
+import {OnInit} from 'angular2/core';
 
 export class categoryMenu {
 	categoryId: number;
 	categoryName: string;
 }
-
-var categoriesMenuList: categoryMenu[] = [
-    { categoryId: 0, categoryName: 'All Products' },
-    { categoryId: 1, categoryName: 'Baby Strollers' },
-    { categoryId: 2, categoryName: 'Bottles & accessories' },
-    { categoryId: 3, categoryName: 'Diapers' },
-];
 
 @Component({
     selector: 'categories-menu',
@@ -27,26 +20,21 @@ var categoriesMenuList: categoryMenu[] = [
     styleUrls: ['js/categories-menu/categories-menu.css'],
     directives: [CORE_DIRECTIVES]
 })
-export class CategoryMenuComponent {
+export class CategoryMenuComponent implements OnInit {
     private http: Http;
-    private zone: NgZone;
     private menuList: categoryMenu[];
     public categorySelected: CategorySelectedService;
     private categoriesUrl = '/categories';
 
     constructor(http: Http, categorySelectedService: CategorySelectedService) {
         this.http = http;
-        this.zone = new NgZone({ enableLongStackTrace: false });
+        this.categorySelected = categorySelectedService;
+    }
 
+    ngOnInit() {
         this.http.get(this.categoriesUrl)
             .map(res => <categoryMenu[]> res.json())
-            .subscribe(categories => {
-                this.zone.run(() => {
-                    this.menuList = categories;
-                })
-            });
-
-        this.categorySelected = categorySelectedService;
+            .subscribe(categories => this.menuList = categories);
     }
 
     onSelect(category) {

@@ -10,13 +10,12 @@ System.register(['angular2/core', 'angular2/http', 'angular2/common', 'rxjs/add/
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1, http_1, common_1, categories_menu_event_emitter_service_1, core_2;
-    var categoryMenu, categoriesMenuList, CategoryMenuComponent;
+    var core_1, http_1, common_1, categories_menu_event_emitter_service_1;
+    var categoryMenu, CategoryMenuComponent;
     return {
         setters:[
             function (core_1_1) {
                 core_1 = core_1_1;
-                core_2 = core_1_1;
             },
             function (http_1_1) {
                 http_1 = http_1_1;
@@ -36,28 +35,18 @@ System.register(['angular2/core', 'angular2/http', 'angular2/common', 'rxjs/add/
                 return categoryMenu;
             }());
             exports_1("categoryMenu", categoryMenu);
-            categoriesMenuList = [
-                { categoryId: 0, categoryName: 'All Products' },
-                { categoryId: 1, categoryName: 'Baby Strollers' },
-                { categoryId: 2, categoryName: 'Bottles & accessories' },
-                { categoryId: 3, categoryName: 'Diapers' },
-            ];
             CategoryMenuComponent = (function () {
                 function CategoryMenuComponent(http, categorySelectedService) {
-                    var _this = this;
                     this.categoriesUrl = '/categories';
                     this.http = http;
-                    this.zone = new core_2.NgZone({ enableLongStackTrace: false });
-                    this.http.get(this.categoriesUrl)
-                        .map(function (res) { return res.json(); })
-                        .subscribe(function (categories) {
-                        _this.zone.run(function () {
-                            _this.menuList = categories;
-                        });
-                    });
-                    //this.menuList = categoriesMenuList;
                     this.categorySelected = categorySelectedService;
                 }
+                CategoryMenuComponent.prototype.ngOnInit = function () {
+                    var _this = this;
+                    this.http.get(this.categoriesUrl)
+                        .map(function (res) { return res.json(); })
+                        .subscribe(function (categories) { return _this.menuList = categories; });
+                };
                 CategoryMenuComponent.prototype.onSelect = function (category) {
                     this.categorySelected.onCategorySelected(category.categoryId);
                 };

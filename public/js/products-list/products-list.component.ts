@@ -9,7 +9,7 @@ import {ProductList} from './product-list.model';
 import {ProductComponent} from '../product/product.component';
 import {CategorySelectedService} from '../categories-menu/categories-menu.event-emitter.service';
 import * as _ from 'lodash';
-import {NgZone} from 'angular2/core';
+import {OnInit} from 'angular2/core';
 
 @Component({
     selector: 'products-list',
@@ -18,27 +18,24 @@ import {NgZone} from 'angular2/core';
     directives: [CORE_DIRECTIVES, ProductComponent],
     providers: [HTTP_PROVIDERS]
 })
-export class ProductsListComponent {
+export class ProductsListComponent implements OnInit {
+    private productsList: ProductList
     private allProducts: Product[];
     private errorMessage: string;
     private products: Product[];
     private categorySelected: CategorySelectedService;
-    private zone: NgZone;
 
     constructor(productsList: ProductList, categorySelectedService: CategorySelectedService) {
-        this.init(productsList);
-        this.zone = new NgZone({ enableLongStackTrace: false });
+        this.productsList = productsList;
 
         this.categorySelected = categorySelectedService;
         this.categorySelected.categorySelected.subscribe(data=>this.filterProductsByCategory(data));
     }
 
-    private init(productsList):void {
-        productsList.getHttpProductList().subscribe(products => {
+    ngOnInit() {
+        this.productsList.getHttpProductList().subscribe(products => {
             this.allProducts = <Product[]> products;
-            this.zone.run(() => {
-                this.products = this.allProducts;
-            });
+            this.products = this.allProducts;
         }, error => this.errorMessage = <any>error);
     }
 
