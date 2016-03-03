@@ -11,8 +11,8 @@
   {
     "id": 101,
     "categoryId": 2,
-    "categoryName": "Polypropylene Bottle",
-    "title": "Bottles & accessories",
+    "categoryName": "Bottles & accessories",
+    "title": "Polypropylene Bottle",
     "img": "http://placehold.it/200x140",
     "price": "29,90",
     "isAdded": false
@@ -24,6 +24,24 @@
     "title": "Pampers Diapers Pak",
     "img": "http://placehold.it/200x140",
     "price": "49,90",
+    "isAdded": false
+  },
+  {
+    "id": 103,
+    "categoryId": 3,
+    "categoryName": "Diapers",
+    "title": "Huggies Diapers Pak",
+    "img": "http://placehold.it/200x140",
+    "price": "44,90",
+    "isAdded": false
+  },
+  {
+    "id": 104,
+    "categoryId": 1,
+    "categoryName": "Baby Strollers",
+    "title": "Baby Stroller Perego",
+    "img": "http://placehold.it/200x140",
+    "price": "299,90",
     "isAdded": false
   }
 ]
