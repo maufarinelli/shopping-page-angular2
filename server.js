@@ -1,18 +1,13 @@
 const express = require('express');
 const path = require('path');
+const routes = require('./server/routes');
 
-var app = express();
+const app = express();
+
+routes(app);
 
 app.get('/', function (req, res) {
-    res.sendFile('index.html', { root: __dirname });
-});
-
-app.get('/product-list', function(req, res) {
-    res.sendFile('server/product-list.json', { root: __dirname });
-});
-
-app.get('/categories', function(req, res) {
-    res.sendFile('server/categories.json', { root: __dirname });
+    res.sendFile('/index.html', { root: __dirname });
 });
 
 // GET public files
